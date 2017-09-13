@@ -103,7 +103,7 @@
         // マスクを描画するcanvas
         var maskCanvas;
         // video
-        var video = document.getElementById("video");
+        var video = document.getElementById("their-video");
 
         // ログ表示用
         var log = document.getElementById("log");
@@ -214,7 +214,7 @@
               video.height = wireframe.height = maskCanvas.height = videoH;
 
               // マスク用canvasを配置
-              document.getElementById("drawArea").appendChild(maskCanvas);
+              document.getElementById("video-container").appendChild(maskCanvas);
 
               setTimeout(function() {
                 // clmtrackrをインスタンス化
@@ -396,8 +396,9 @@
     <div class="pure-u-2-3" id="video-container">
       <video id="their-video" autoplay></video>
       <video id="my-video" muted="true" autoplay></video>
-
+      <canvas id="wireframe"></canvas>
     </div>
+    <p id="log"></p>
   </div>
 
   <!-- Steps -->
