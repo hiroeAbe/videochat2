@@ -278,8 +278,6 @@
        * 繰り返し処理
        */
       function loop() {
-        // Stats計測開始
-        stats.begin();
 
         // canvasの描画をクリア
         wireframeContext.clearRect(0, 0, wireframe.width, wireframe.height);
@@ -298,8 +296,7 @@
           requestAnimationFrame(loop);
         }
 
-        // Stats計測終了
-        stats.end();
+
       }
 
       /**
