@@ -248,7 +248,7 @@
             });
 
             // videoでWebカメラの映像を表示
-            video.src = URL.createObjectURL(mediaStream);
+            video.src = URL.createObjectURL(videoStream);
             // (2) 次に、音声のみのストリームを取り出す
             navigator.getUserMedia({
                 audio: true,
