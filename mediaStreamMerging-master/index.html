@@ -130,28 +130,29 @@
         );
 
 
-      function step2() {
-        $('#step1, #step3').hide();
-        $('#step2').show();
-      }
-
-      function step3(call) {
-        // Hang up on an existing call if present
-        if (window.existingCall) {
-          window.existingCall.close();
+        function step2() {
+          $('#step1, #step3').hide();
+          $('#step2').show();
         }
 
-        // Wait for stream on the call, then set peer video display
-        call.on('stream', function(stream) {
-          $('#their-video').prop('src', URL.createObjectURL(stream));
-        });
+        function step3(call) {
+          // Hang up on an existing call if present
+          if (window.existingCall) {
+            window.existingCall.close();
+          }
 
-        // UI stuff
-        window.existingCall = call;
-        $('#their-id').text(call.peer);
-        call.on('close', step2);
-        $('#step1, #step2').hide();
-        $('#step3').show();
+          // Wait for stream on the call, then set peer video display
+          call.on('stream', function(stream) {
+            $('#their-video').prop('src', URL.createObjectURL(stream));
+          });
+
+          // UI stuff
+          window.existingCall = call;
+          $('#their-id').text(call.peer);
+          call.on('close', step2);
+          $('#step1, #step2').hide();
+          $('#step3').show();
+        }
       }
     </script>
 
