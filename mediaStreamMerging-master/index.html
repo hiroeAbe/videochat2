@@ -173,26 +173,44 @@
     }
 
     .select-box select {
-      width: 10%;
+      width: 6%;
       padding: 8px 10px 10px 10px;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
       color: #586b8f;
       border: solid 3px #999;
       border-radius: 9px;
       background: #eee;
-      background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%, #addce4 100%);
-      background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%, #addce4 100%);
+      background: url(arrow01.png) right 40% no-repeat, -webkit-linear-gradient(top, #fff 0%, #ffed78 100%);
+      background: url(arrow01.png) right 40% no-repeat, linear-gradient(to bottom, #fff 0%, #ffed78 100%);
       background-size: 18px, 100%;
+    }
+
+    .playsound1 {
+      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+      font-size: 16px;
+      color: #586b8f;
+      padding: 7px 10px 10px 10px;
+      background: #fff;
+      transition: .4s;
+    }
+
+    .playsound1>span {
+      border-bottom: solid 2px #FFF;
+    }
+
+    .playsound1:hover {
+      background: #91b5fb;
     }
   </style>
   <div class="select-box">
     <form name="selbox">
-      <p><h3>music:</h3><br>
+      <p>
+        <h3>music:</h3><br>
         <select id="music">
   <option value="./cafe.mp3">cafe</option>
   <option value="./sea.mp3">sea</option>
@@ -201,7 +219,7 @@
   </select></p>
     </form>
   </div>
-  <button id="playsound" disabled>Play</button><br/>
+  <button id="playsound" disabled class="playsound1">Play</button><br/>
 
   <div class="pure-g">
 
