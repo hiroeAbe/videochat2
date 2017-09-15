@@ -40,16 +40,16 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 
 #my-video {
   margin-top: 15px;
-  width: 220px;
-  height: 165px;
+  width: 200px;
+  height: 150px;
   background-color: #eee;
   border: solid 3px #addce4;
   border-radius: 10px;/*角の丸み*/
 }
 
 #their-video {
-  width: 450px;
-  height: 300px;
+  width: 350px;
+  height: 263px;
   background-color: #eee;
   border: solid 3px #addce4;
   border-radius: 10px;/*角の丸み*/
