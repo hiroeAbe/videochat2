@@ -48,9 +48,9 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 }
 
 #their-video {
-  width: auto;
-  height: auto;
-  max-height: 300px;
+  width: 50%;
+  height: 50%;
+  max-height: 150px;
   background-color: #eee;
   border: solid 3px #addce4;
   border-radius: 10px;/*角の丸み*/
