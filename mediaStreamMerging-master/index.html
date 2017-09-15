@@ -159,45 +159,48 @@
 </head>
 
 <body>
-<style>
-body {
-  color: gray;
-  background-color: #ffb6c1;
-}
-.select-box select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-.select-box select {
-	width: 10%;
-	 padding: 8px 10px 5px 10px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: 'Avenir','Corbel','Osaka','MS Pゴシック',sans-serif;
-  color: gray;
-	border: solid 3px #999;
-  border-radius: 10px;
-	background: #eee;
-	background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%,#d3d3d3 100%);
-	background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%,#d3d3d3 100%);
-	background-size: 18px, 100%;
-}
-</style>
-<div class="select-box">
-  <form name="selbox">
-    <p>music:<br>
-      <select id="music">
+  <style>
+    body {
+      color: gray;
+      background-color: #ffb6c1;
+      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+    }
+
+    .select-box select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .select-box select {
+      width: 10%;
+      padding: 8px 10px 5px 10px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      font-weight: bold;
+      font-size: 20px;
+      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+      color: gray;
+      border: solid 3px #999;
+      border-radius: 9px;
+      background: #eee;
+      background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%, #d3d3d3 100%);
+      background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%, #d3d3d3 100%);
+      background-size: 18px, 100%;
+    }
+  </style>
+  <div class="select-box">
+    <form name="selbox">
+      <p>music:<br>
+        <select id="music">
   <option value="./cafe.mp3">cafe</option>
   <option value="./sea.mp3">sea</option>
   <option value="./work.mp3">work</option>
   <option value="./party.mp3">party</option>
   </select></p>
-  </form>
-</div>
+    </form>
+  </div>
   <button id="playsound" disabled>Play</button><br/>
 
   <div class="pure-g">
