@@ -12,124 +12,124 @@
 
 
 
-    <script>
-      // Compatibility shim
-      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+  <script>
+    // Compatibility shim
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-      // PeerJS object
-      var peer = new Peer({
-        key: '26b7f1a7-ea54-42e9-872a-f3bb803d816b',
-        debug: 3
-      });
-
-
-
-      peer.on('open', function() {
-        $('#my-id').text(peer.id);
-      });
+    // PeerJS object
+    var peer = new Peer({
+      key: '26b7f1a7-ea54-42e9-872a-f3bb803d816b',
+      debug: 3
+    });
 
 
 
-      // Receiving a call
-      peer.on('call', function(call) {
-        // Answer the call automatically (instead of prompting user) for demo purposes
-        call.answer(window.localStream);
+    peer.on('open', function() {
+      $('#my-id').text(peer.id);
+    });
+
+
+
+    // Receiving a call
+    peer.on('call', function(call) {
+      // Answer the call automatically (instead of prompting user) for demo purposes
+      call.answer(window.localStream);
+      step3(call);
+    });
+    peer.on('error', function(err) {
+      alert(err.message);
+      // Return to step 2 if error occurs
+      step2();
+    });
+
+    // Click handlers setup
+    $(function() {
+      $('#make-call').click(function() {
+        // Initiate a call!
+        var call = peer.call($('#callto-id').val(), window.localStream);
+
         step3(call);
       });
-      peer.on('error', function(err) {
-        alert(err.message);
-        // Return to step 2 if error occurs
+
+      $('#end-call').click(function() {
+        window.existingCall.close();
         step2();
       });
 
-      // Click handlers setup
-      $(function() {
-        $('#make-call').click(function() {
-          // Initiate a call!
-          var call = peer.call($('#callto-id').val(), window.localStream);
-
-          step3(call);
-        });
-
-        $('#end-call').click(function() {
-          window.existingCall.close();
-          step2();
-        });
-
-        // Retry if getUserMedia fails
-        $('#step1-retry').click(function() {
-          $('#step1-error').hide();
-          step1();
-        });
-
-        // Get things started
+      // Retry if getUserMedia fails
+      $('#step1-retry').click(function() {
+        $('#step1-error').hide();
         step1();
       });
 
-      function step1() {
+      // Get things started
+      step1();
+    });
 
-        // (1) まずはビデオのみのストリームを取り出す
-        navigator.getUserMedia({
-            audio: false,
-            video: true
-          },
-          function(videoStream) {
-            // Set your video displays
-            $('#my-video').prop('src', URL.createObjectURL(videoStream));
-            window.localStream = videoStream;
+    function step1() {
 
-
-            // (2) 次に、音声のみのストリームを取り出す
-            navigator.getUserMedia({
-                audio: true,
-                video: false
-              },
-              function(audioStream) {
-
-                SpeechJammer.setupSJ(audioStream);
-                PichShift.setup(audioStream);
-
-                // できあがったoutputをvideoStreamに合流させる
-                videoStream.addTrack(PichShift.output.stream.getAudioTracks()[0]);
-
-                step2();
-              },
-              function() {
-                $('#step1-error').show();　
-              } //エラー表示
-            );
-          },
-          function() {
-            $('#step1-error').show();　
-          } //エラー表示
-        );
+      // (1) まずはビデオのみのストリームを取り出す
+      navigator.getUserMedia({
+          audio: false,
+          video: true
+        },
+        function(videoStream) {
+          // Set your video displays
+          $('#my-video').prop('src', URL.createObjectURL(videoStream));
+          window.localStream = videoStream;
 
 
-        function step2() {
-          $('#step1, #step3').hide();
-          $('#step2').show();
-        }
+          // (2) 次に、音声のみのストリームを取り出す
+          navigator.getUserMedia({
+              audio: true,
+              video: false
+            },
+            function(audioStream) {
 
-        function step3(call) {
-          // Hang up on an existing call if present
-          if (window.existingCall) {
-            window.existingCall.close();
-          }
+              SpeechJammer.setupSJ(audioStream);
+              PichShift.setup(audioStream);
 
-          // Wait for stream on the call, then set peer video display
-          call.on('stream', function(stream) {
-            $('#their-video').prop('src', URL.createObjectURL(stream));
-          });
+              // できあがったoutputをvideoStreamに合流させる
+              videoStream.addTrack(PichShift.output.stream.getAudioTracks()[0]);
 
-          // UI stuff
-          window.existingCall = call;
-          $('#their-id').text(call.peer);
-          call.on('close', step2);
-          $('#step1, #step2').hide();
-          $('#step3').show();
-        }
+              step2();
+            },
+            function() {
+              $('#step1-error').show();　
+            } //エラー表示
+          );
+        },
+        function() {
+          $('#step1-error').show();　
+        } //エラー表示
+      );
+
+
+      function step2() {
+        $('#step1, #step3').hide();
+        $('#step2').show();
       }
-    </script>
+
+      function step3(call) {
+        // Hang up on an existing call if present
+        if (window.existingCall) {
+          window.existingCall.close();
+        }
+
+        // Wait for stream on the call, then set peer video display
+        call.on('stream', function(stream) {
+          $('#their-video').prop('src', URL.createObjectURL(stream));
+        });
+
+        // UI stuff
+        window.existingCall = call;
+        $('#their-id').text(call.peer);
+        call.on('close', step2);
+        $('#step1, #step2').hide();
+        $('#step3').show();
+      }
+    }
+  </script>
 
 </head>
 
@@ -141,10 +141,12 @@
       background-color: #ffed78;
       font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
     }
+
     h1 {
-    border-bottom: dashed 2px #addce4;
-    /*線の種類（点線）2px 線色*/
+      border-bottom: dashed 2px #addce4;
+      /*線の種類（点線）2px 線色*/
     }
+
     .select-box select {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -186,6 +188,15 @@
     .playsound1:hover {
       background: #f8f8ff;
     }
+    .textbox1{
+      padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #586b8f;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    }
+
   </style>
   <div class="select-box">
     <form name="selbox">
@@ -206,6 +217,9 @@
     <div class="pure-u-2-3" id="video-container">
       <video id="their-video" autoplay></video>
       <video id="my-video" muted="true" autoplay></video>
+    </div>
+    <div class="textbox1">
+      <textarea cols="40" rows="20" name="memobox"></textarea>
     </div>
   </div>
 
