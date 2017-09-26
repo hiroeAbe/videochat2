@@ -54,7 +54,7 @@
       isRunning = false;
       start.textContent = 'Start';
       timeToCountDown = timeLeft;
-      clearTimeOut(timerId);
+      clearTimeout(timerId);
     }
   });
   min.addEventListener('click', function() {
