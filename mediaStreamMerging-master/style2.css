@@ -83,15 +83,15 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   user-select:none;
   width: 45px;
   background: #ddd;
-  height: 20px;
-  line-height: 20px;
+  height: 22px;
+  line-height: 22px;
   float: left;
 }
 .controls{
   overflow: hidden;
 }
 .controls > div + div {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .controls > div:hover{
   opacity: 0.7
