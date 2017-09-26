@@ -66,8 +66,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .container{
   font-size: 14px;
   margin: 12px;
-  width: 150px;
-  background: #fff;
+  width: 200px;
+  background: #addce4;
   padding: 10px;
   text-align:center;
 }
@@ -81,7 +81,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .controls > div{
   cursor:pointer;
   user-select:none;
-  width: 30px;
+  width: 40px;
   background: #ddd;
   height: 20px;
   line-height: 20px;
