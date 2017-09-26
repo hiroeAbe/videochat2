@@ -65,7 +65,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 .container{
   font-size: 14px;
-  margin: 12px;
+  margin: 10px;
   width: 250px;
   background: #addce4;
   padding: 10px;
@@ -73,18 +73,19 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 #timer{
   background: #ddd;
-  height: 40px;
-  line-height: 40px;
-  font-size: 22px;
-  margin-bottom: 8px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  margin-bottom: 6px;
 }
 .controls > div{
   cursor:pointer;
   user-select:none;
   width: 45px;
+  font-size: 12px;
   background: #ddd;
-  height: 22px;
-  line-height: 22px;
+  height: 20px;
+  line-height: 20px;
   float: left;
 }
 .controls{
