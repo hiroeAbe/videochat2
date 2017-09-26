@@ -3,6 +3,8 @@
 <head>
   <title>Video chat</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   <script type="text/javascript" src="https://skyway.io/dist/0.3/peer.js"></script>
 
@@ -134,74 +136,7 @@
 </head>
 
 <body>
-  <style>
-    body {
-      border-top:solid 60px #addce4;
-      padding-left: 60px;
-      padding-right: 60px;
-      padding-bottom: 70px;
-      color: #586b8f;
-      background-color: #ffed78;
-      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
-    }
 
-    h1 {
-      border-bottom: dashed 2px #addce4;
-      /*線の種類（点線）2px 線色*/
-    }
-
-    .select-box select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-
-    .select-box select {
-      width: 80px;
-      padding: 8px 10px 10px 10px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      font-weight: bold;
-      font-size: 18px;
-      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
-      color: #586b8f;
-      border: solid 3px #586b8f;
-      border-radius: 0 0 0 0;
-      background: #eee;
-      background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%, #ffed78 100%);
-      background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%, #ffed78 100%);
-      background-size: 18px, 100%;
-    }
-
-    .playsound1 {
-      font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
-      font-size: 14px;
-      color: #586b8f;
-      padding: 6px 8px 8px 8px;
-      border-radius: 10px;
-      background: #fff;
-      transition: .4s;
-    }
-
-    .playsound1>span {
-      border-bottom: solid 2px #FFF;
-    }
-
-    .playsound1:hover {
-      background: #ff8c00;
-    }
-    .textbox1{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #586b8f;
-    font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
-    background: white;
-    border-top: solid 5px #586b8f;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-    }
-
-  </style>
   <div class="select-box">
     <form name="selbox">
       <p>
