@@ -72,7 +72,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   text-align:center;
 }
 #timer{
-  background: #ddd;
+  background: #fff;
   height: 30px;
   line-height: 30px;
   font-size: 20px;
@@ -83,7 +83,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   user-select:none;
   width: 45px;
   font-size: 12px;
-  background: #ddd;
+  background: #fff;
   height: 20px;
   line-height: 20px;
   float: left;
