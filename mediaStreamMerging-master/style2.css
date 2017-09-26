@@ -69,19 +69,19 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   width: 300px;
   background: #fff;
   padding: 15px;
-  text-align: center;
+  text-align:left;
 }
 #timer{
   background: #ddd;
   height: 80px;
   line-height: 80px;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 15px;
 }
 .controls > div{
   cursor:pointer;
   user-select:none;
-  width: 50px;
+  width: 60px;
   background: #ddd;
   height: 35px;
   line-height: 35px;
