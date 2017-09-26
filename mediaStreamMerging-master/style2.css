@@ -65,7 +65,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 .container{
   font-size: 14px;
-  margin: 10px;
+  margin: 8px;
   width: 250px;
   background: #addce4;
   padding: 10px;
@@ -81,8 +81,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .controls > div{
   cursor:pointer;
   user-select:none;
-  width: 45px;
-  font-size: 12px;
+  width: 47px;
+  font-size: 14px;
   background: #fff;
   height: 20px;
   line-height: 20px;
