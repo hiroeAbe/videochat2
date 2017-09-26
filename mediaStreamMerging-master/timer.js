@@ -33,7 +33,7 @@
       if (timeLeft < 0) {
         isRunning = false;
         start.textContent = 'Start';
-        clearTimeOut(timerId);
+        clearTimeout(timerId);
         timeLeft = 0;
         timeToCountDown = 0;
         updateTimer(timeLeft);
