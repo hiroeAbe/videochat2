@@ -1,8 +1,6 @@
 (function () {
   'use strict';
-
-  var hotaru = document.getElementById('hotaru');
-  var okan = document.getElementById('okan');
+  
 
   var src = null;
   var audioctx = new AudioContext();
@@ -13,12 +11,12 @@
       return response.arrayBuffer();
     }).then( arrayBuffer => {
       ctx.decodeAudioData(arrayBuffer, (b) => {buffer=b;}, () => {});
-      hotaru.removeAttribute("disabled");
+      document.querySelector("button#hotaru").removeAttribute("disabled");
     });
   }
   LoadSample1(audioctx, "./hotarunohikari.mp3");
 
-  hotaru.addEventListener('click', function() {
+document.querySelector("button#hotaru").addEventListener("click", (event) =>{
     var label;
     if(event.target.innerHTML=="Stop") {
       src.stop(0);
@@ -38,11 +36,11 @@
       return response.arrayBuffer();
     }).then( arrayBuffer => {
       ctx.decodeAudioData(arrayBuffer, (b) => {buffer=b;}, () => {});
-      okan.removeAttribute("disabled");
+      document.querySelector("button#okan").removeAttribute("disabled");
     });
   }
   LoadSample2(audioctx, "./okantest.mp3");
-  okan.addEventListener('click', function() {
+  document.querySelector("button#okan").addEventListener("click", (event) =>{
     var label;
     if(event.target.innerHTML=="Stop") {
       src.stop(0);
