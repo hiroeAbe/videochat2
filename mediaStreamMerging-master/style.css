@@ -43,7 +43,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
   width: 200px;
   height: 150px;
   background-color: #fff;
-  border: solid 3px #addce4;
+  border: double 3px #addce4;
   border-radius: 10px;/*角の丸み*/
 }
 
@@ -51,7 +51,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
   width: 350px;
   height: 263px;
   background-color: #fff;
-  border: solid 3px #addce4;
+  border: double 3px #addce4;
   border-radius: 10px;/*角の丸み*/
 }
 
