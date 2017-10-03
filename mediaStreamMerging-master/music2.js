@@ -11,16 +11,16 @@
       return response.arrayBuffer();
     }).then( arrayBuffer => {
       ctx.decodeAudioData(arrayBuffer, (b) => {buffer=b;}, () => {});
-      document.querySelector("button#hotaru").removeAttribute("disabled");
+      document.querySelector("button#okan").removeAttribute("disabled");
     });
   }
-  LoadSample(audioctx, "./hotarunohikari.mp3");
+  LoadSample(audioctx, "./okantest.mp3");
 
-document.querySelector("button#hotaru").addEventListener("click", (event) =>{
+document.querySelector("button#okan").addEventListener("click", (event) =>{
     var label;
     if(event.target.innerHTML=="Stop") {
       src.stop(0);
-      label="Hotaru";
+      label="Okan";
     } else {
       src = audioctx.createBufferSource();
       src.buffer = buffer;
