@@ -31,4 +31,4 @@ document.querySelector("button#hotaru").addEventListener("click", (event) =>{
     }
     event.target.innerHTML=label;
   });
-});
+})();

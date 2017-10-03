@@ -31,4 +31,4 @@ document.querySelector("button#okan").addEventListener("click", (event) =>{
     }
     event.target.innerHTML=label;
   });
-});
+})();
