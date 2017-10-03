@@ -101,17 +101,17 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 .musicButton > button{
   display: inline-block;
 text-decoration: none;
-background: #87befd;
+background: #addce4;
 color: #FFF;
-width: 120px;
-height: 120px;
-line-height: 120px;
+width: 60px;
+height: 60px;
+line-height: 60px;
 border-radius: 50%;
 text-align: center;
 vertical-align: middle;
 overflow: hidden;
 transition: .4s;
 }
-.container2:hover{
-background: #668ad8;
+.musicButton > button:hover{
+background: #586b8f;
 }
