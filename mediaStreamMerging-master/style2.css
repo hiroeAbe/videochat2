@@ -41,7 +41,7 @@ h1 {
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
   font-size: 14px;
   color: #586b8f;
-  padding:8px;
+  padding:10px;
   border-radius: 50%;
   background: #fff;
   transition: .4s;
@@ -53,6 +53,7 @@ h1 {
 
 .playsound1:hover {
   background: #586b8f;
+  color: #fff;
 }
 .textbox1{
 padding: 0.5em 1em;
