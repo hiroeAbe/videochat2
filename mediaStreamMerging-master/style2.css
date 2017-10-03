@@ -98,7 +98,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   opacity: 0.7
 }
 
-.container2{
+.musicButton > button{
   display: inline-block;
 text-decoration: none;
 background: #87befd;

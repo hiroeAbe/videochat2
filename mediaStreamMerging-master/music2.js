@@ -18,17 +18,12 @@
 
 document.querySelector("button#okan").addEventListener("click", (event) =>{
     var label;
-    if(event.target.innerHTML=="Stop") {
-      src.stop(0);
-      label="Okan";
-    } else {
       src = audioctx.createBufferSource();
       src.buffer = buffer;
-      src.loop = true;
+      src.loop = false;
       src.connect(audioctx.destination);
       src.start(0);
-      label="Stop";
-    }
+
     event.target.innerHTML=label;
   });
 })();
