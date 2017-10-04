@@ -11,19 +11,19 @@
       return response.arrayBuffer();
     }).then( arrayBuffer => {
       ctx.decodeAudioData(arrayBuffer, (b) => {buffer=b;}, () => {});
-      document.querySelector("button#okan").removeAttribute("disabled");
+      document.querySelector("button#train").removeAttribute("disabled");
     });
   }
-  LoadSample(audioctx, "./okantest.mp3");
+  LoadSample(audioctx, "./station_announcement.mp3");
 
-document.querySelector("button#okan").addEventListener("click", (event) =>{
+document.querySelector("button#train").addEventListener("click", (event) =>{
     var label;
       src = audioctx.createBufferSource();
       src.buffer = buffer;
       src.loop = false;
       src.connect(audioctx.destination);
       src.start(0);
-      label = "Okan";
+      label = "Train";
     event.target.innerHTML=label;
   });
 })();
