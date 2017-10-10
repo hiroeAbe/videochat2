@@ -6,8 +6,18 @@
 </head>
 
 <body>
-  <button>var.1</button>
-  <button>ver.2</button>
+  <button id="var1" disabled>var.1</button>
+  <button id="var2" disabled>ver.2</button>
+  <script type="text/javascript">
+document.querySelector("button#var1").addEventListener("click", (event) => {
+  location.href = 'https://rawgit.com/hiroeAbe/videochat2/master/mediaStreamMerging-master/index.html';
+});
+document.querySelector("button#var2").addEventListener("click", (event) => {
+  location.href = 'https://rawgit.com/hiroeAbe/videochat3/master/mediaStreamMerging-master/index.html';
+});
+
+  </script>
 </body>
+
 
 </html>
