@@ -1,0 +1,52 @@
+body {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 70px;
+  color: #586b8f;
+  background-color: #ffed78;
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+}
+
+h1 {
+  color: #364e96;
+  /*文字色*/
+  padding: 0.5em 0;
+  /*上下の余白*/
+  border-top: solid 3px #364e96;
+  /*上線*/
+  border-bottom: solid 3px #364e96;
+  /*下線*/
+}
+
+.buttonClass{
+  float: left;
+}
+.buttonClass>#var1 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #addce4;
+  border: solid 2px #addce4;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.buttonClass>#var1:hover {
+  background: #addce4;
+  color: white;
+}
+
+.buttonClass>#var2 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ec6d71;
+  border: solid 2px #ec6d71;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.buttonClass>#var2:hover {
+  background: #ec6d71;
+  color: white;
+}
