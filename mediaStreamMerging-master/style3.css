@@ -20,8 +20,11 @@ h1 {
 
 .buttonClass{
   float: left;
+  width: 120px;
+  height: 80px;
 }
 .buttonClass>#var1 {
+  text-align: center;
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -37,6 +40,7 @@ h1 {
 }
 
 .buttonClass>#var2 {
+  text-align: center;
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
