@@ -40,11 +40,12 @@
     peer.on('connection', connection => {
       var emotionItem = step4().selectedItem.value;
       connection.send(emotionItem);
+      connection.on('data', data => {
+        recEmo = data;
+        console.log(data);
+      });
     });
-    connection.on('data', data => {
-      recEmo = data;
-      console.log(data);
-    });
+    
 
     peer.on('error', function(err) {
       alert(err.message);
