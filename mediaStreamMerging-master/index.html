@@ -37,6 +37,7 @@
       call.answer(window.localStream);
       step3(call);
     });
+
     peer.on('error', function(err) {
       alert(err.message);
       // Return to step 2 if error occurs
@@ -149,8 +150,30 @@
     <button id="playsound" disabled class="playsound1">Play</button><br/>
   </div>
 
-  <div class="pure-g">
+  <div class="emotion">
+    <form name="selbox2">
+      <p>
+        <select id="emotion">
+<option value="emo1">emo1</option>
+<option value="emo2">emo2</option>
+<option value="emo3">emo3</option>
+<option value="emo4">emo4</option>
+</select></p>
+    </form>
+  </div>
 
+  <script type="text/javascript">
+  var emotion = document.getElementById("emotion");
+  emotion.onchange = function() {
+    selectedItem = this.options[this.selectedIndex];
+    console.log(selectedItem.value);
+    peer.on('connection', connection => {
+      connection.send(selectedItem.value);
+    });
+  }
+  </script>
+
+  <div class="pure-g">
     <!-- Video area -->
 
     <div class="textbox1">
