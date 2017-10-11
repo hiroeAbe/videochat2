@@ -21,8 +21,7 @@ h1 {
 .buttonClass{
   position: relative;
   overflow: hidden;
-  left: -50%;
-  float: left;
+  float: right;
 }
 .buttonClass>#var1 {
   font-size: 20px;
