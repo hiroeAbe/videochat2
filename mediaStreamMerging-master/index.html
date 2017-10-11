@@ -37,6 +37,14 @@
       call.answer(window.localStream);
       step3(call);
     });
+    peer.on('connection', connection => {
+      var emotionItem = step4().selectedItem.value;
+      connection.send(emotionItem);
+    });
+    connection.on('data', data => {
+      recEmo = data;
+      console.log(data);
+    });
 
     peer.on('error', function(err) {
       alert(err.message);
@@ -164,20 +172,14 @@
   </div>
 
   <script type="text/javascript">
-  var emotion = document.getElementById("emotion");
-  var recEmo = document.getElementById("emo");
-  emotion.onchange = function() {
-    selectedItem = this.options[this.selectedIndex];
-    console.log(selectedItem.value);
-    peer.on('connection', connection => {
-      connection.send(selectedItem.value);
-    });
-    connection.on('data',data =>{
-      recEmo = data;
-      console.log(data);
-    });
-  }
-
+    function step4() {
+      var emotion = document.getElementById("emotion");
+      var recEmo = document.getElementById("emo");
+      emotion.onchange = function() {
+        selectedItem = this.options[this.selectedIndex];
+        console.log(selectedItem.value);
+      }
+    }
   </script>
 
   <div class="pure-g">
