@@ -22,6 +22,7 @@ h1 {
   float: left;
 }
 .buttonClass>#var1 {
+  font-size: 20px;
   width: 120px;
   height: 80px;
   text-align: center;
@@ -40,6 +41,7 @@ h1 {
 }
 
 .buttonClass>#var2 {
+  font-size: 20px;
   width: 120px;
   height: 80px;
   text-align: center;
