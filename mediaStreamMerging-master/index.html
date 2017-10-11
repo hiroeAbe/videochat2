@@ -172,11 +172,12 @@
     peer.on('connection', connection => {
       connection.send(selectedItem.value);
     });
+    connection.on('data',data =>{
+      recEmo = data;
+      console.log(data);
+    });
   }
-  connection.on('data',data =>{
-    recEmo = data;
-    console.log(data);
-  });
+
   </script>
 
   <div class="pure-g">
