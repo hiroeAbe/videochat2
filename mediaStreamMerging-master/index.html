@@ -160,10 +160,12 @@
 <option value="emo4">emo4</option>
 </select></p>
     </form>
+    <p id="emo">emo</p>
   </div>
 
   <script type="text/javascript">
   var emotion = document.getElementById("emotion");
+  var recEmo = document.getElementById("emo");
   emotion.onchange = function() {
     selectedItem = this.options[this.selectedIndex];
     console.log(selectedItem.value);
@@ -171,6 +173,10 @@
       connection.send(selectedItem.value);
     });
   }
+  connection.on('data',data =>{
+    recEmo = data;
+    console.log(data);
+  });
   </script>
 
   <div class="pure-g">
