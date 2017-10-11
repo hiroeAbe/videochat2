@@ -19,7 +19,9 @@ h1 {
 }
 
 .buttonClass{
-  float: right;
+  overflow: hidden;
+  left: 50%;
+  float: left;
 }
 .buttonClass>#var1 {
   font-size: 20px;
